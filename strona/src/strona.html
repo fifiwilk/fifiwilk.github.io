@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link href="./output.css" rel="stylesheet">
+	<title> Zwierzęta </title>
+</head>
+<body class="bg-red-200 grid grid-cols-[40%_40%_20%] gap-1">
+	<header class="text-4xl font-extrabold col-start-1 col-end-4 flex flex-row justify-center items-center">
+		Nagłówek o zwierzętach
+	</header>
+
+	<div>
+	<article>
+		<h2> Artykuł o zwierzętach </h2>
+		Uga buga zwierzęta są turbo spoko, a to przepis na zupkę chińską:
+		PRZYGOTOWANIE KROK PO KROKU
+		Marchewkę obierz i pokrój obieraczką w długie, cieniutkie plastry. Kapustę umyj i pokrój dość grubo. Grzyby namocz w gorącej wodzie, a  gdy zmiękną pokrój. Czosnek przeciśnij przez praskę i utrzyj z solą. Imbir zetrzyj na najdrobniejszej tarce. Rozgrzej na patelni nieco oleju i przesmaż na nim imbir i czosnek. Gdy zaczną intensywnie pachnieć )po ok 1 min) dodaj marchewkę, kapustę i grzyby. Smaż 1-2 minuty mieszając po czym wlej 4 szklanki wody i zagotuj. Kurczaka pokrój na cienkie paski i dodaj do zupy, gotuj kilka minut. Zupę przypraw solą, pieprzem, kurkumą i sosem sojowym, dodaj posiekane chili. Zgaś ogień i dodaj makaron, przykryj i poczekaj kilka minut aż napęcznieje.
+	</article>
+	</div>
+
+	<div>
+	<table class="table-auto bg-yellow-400 ...">
+	  <caption>
+		  Oceny zwierząt
+	  </caption>
+	  <thead>
+		<tr>
+		  <th scope="col">Zwierze</th>
+		  <th scope="col">Pociesność</th>
+		  <th scope="col">Spryt</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <th scope="row">Panda</th>
+		  <td>10/10</td>
+		  <td>0/10</td>
+		</tr>
+		<tr>
+		  <th scope="row">Pies</th>
+		  <td>8/10</td>
+		  <td>7/10</td>
+		</tr>
+		<tr>
+		  <th scope="row">Kapibara</th>
+		  <td>10/10</td>
+		  <td>10/10</td>
+		</tr>
+		<tr>
+		  <th scope="row">Myszojeleń</th>
+		  <td>10/10</td>
+		  <td>nie mam pojęcia</td>
+		</tr>
+	  </tbody>
+	</table>
+	</div>
+
+	<div>
+	<h1 class="text-red-700"> Top 4 zwierzęta wodne </h1>
+	 <ul type="I" class="text-orange-500 list-inside list-[upper-roman]">
+	  <li>Ryba</li>
+	  <li>Godzilla</li>
+	  <li>Krewetki</li>
+	</ul> 	
+	</div>
+
+	<div>
+	<h3> Zagadka o bobrze</h3>
+	<details>
+		<summary class="shadow-inner"> Co mówi bóbr przed pójściem w spanko? </summary>
+		<p class="text-sky-500"> Bobranoc xD </p>
+	</details>
+	</div>
+
+	<div>
+	<footer>
+		Oto zdjęcie <strong><em> potężnego </em></strong> wiewiura:
+		 <img src="images/wiewiura.webp" alt="Wiewiur" width="200" height="250"> 
+	</footer>
+	</div>
+
+	<div>
+	<h2> Niespodziewana ankieta: </h2>
+	<form>
+		<label for="zwierzok" class="bg-gray-300">Jakie jest twoje ulubione zwierze?</label><br>
+		<input type="text" id="zwierzok" name="zwierzok" class="bg-gray-500"><br>
+		<label for="jajcarze">Który ssak znosi jaja?</label><br>
+		<select name="jajcarze" id="jajcarze">
+			<optgroup label="Zwierzęta">
+				<option value="delfin">Delfin</option>
+				<option value="myszojeleń">Myszojeleń</option>
+				<option value="dziobak">Dziobak</option>
+			</optgroup>
+			<optgroup label="Twoja Stara">
+				<option>Zapierdala</option>
+			</optgroup>
+		</select><br>
+		<button type="button" class="bg-indigo-500 hover:bg-cyan-600 animate-bounce w-30 h-6 ...">Kliknij by dać ciastko szopowi praczowi</button>
+	</form>
+
+	<h4>Bobrowisko w Starym Sączu</h4>
+	<label for="file">zapełnienie bobrami: </label>
+	<progress id="file" value="2" max="100"> 2% </progress>
+
+	</div>
+
+	<div class="col-start-1 col-span-3 flex flex-row justify-center items-center">
+	<h5>A tutaj mapa do poklikania zwierzaczków:</h5>
+	<img src="images/kot_pies_papuga.png" alt="kot_pies_papuga" usemap="#kot_pies_papuga" width="400" height="379">
+
+	<map name="kot_pies_papuga">
+		<area shape="rect" coords="34,44,240,350" alt="pies" href="pies.htm">
+		<area shape="rect" coords="255,50,333,350" alt="kot" href="kot.htm">
+		<area shape="rect" coords="140,0,200,60" alt="papuga" href="papuga.htm">
+	</map>
+	</div>
+
+	<footer>
+		Stopka o zwierzętach
+	</footer>
+</body>
+</html>
