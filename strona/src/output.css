@@ -638,16 +638,8 @@ h4 {
   list-style-position: inside;
 }
 
-.list-outside {
-  list-style-position: outside;
-}
-
 .list-\[upper-roman\] {
   list-style-type: upper-roman;
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-\[40\%_40\%_20\%\] {
@@ -664,10 +656,6 @@ h4 {
 
 .justify-center {
   justify-content: center;
-}
-
-.gap-4 {
-  gap: 1rem;
 }
 
 .gap-1 {
