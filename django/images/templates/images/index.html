@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image List</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    {% load custom_tags %}
+    <div class="container">
+        <form method="GET" class="mt-3">
+            <div class="form-row">
+                <!-- Filter by tag -->
+                <label for="tag" class="col-lg-2">Filter by tag:</label>
+                <div class="col-lg-4">
+                    <select name="tag" id="tag" class="form-control">
+                        <!-- Options for tags -->
+                        {% if chosen_tag == 'All' %}
+                            <option selected value="">All</option> 
+                        {% else %}
+                            <option value="">All</option>
+                        {% endif %}
+
+                        {% for tag in tags %}
+                            {% if chosen_tag == tag.tag %}
+                                <option selected value="{{tag.tag}}">{{tag.tag}}</option>
+                            {% else %}
+                                <option value="{{tag.tag}}">{{tag.tag}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select> 
+                </div>
+            </div>
+            <div class="form-row">
+                <!-- Sorting -->
+                <label for="sort_by" class="col-lg-2">Sorting:</label>
+                <div class="col-lg-4">
+                    <select name="sort_by" id="sort_by" class="form-control">
+                        <option {% if sort_by == 'pub_dec'%} selected {%endif%} value="pub_dec">From newest</option>
+                        <option {% if sort_by == 'pub_asc'%} selected {%endif%} value="pub_asc">From oldest</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Filter and Sort</button>
+            </div>
+        </form>
+
+        <!-- Image list -->
+        <div class="row mt-4">
+            {% for img, mini in images %}
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            {{mini | safe}}
+                            {{img.image_title}}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-box">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <!-- Previous page link -->
+                    {% if images.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?{% param_replace page=1 %}">&laquo;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?{% param_replace page=images.previous_page_number %}">&larr;</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <span class="page-link" style="color: grey">&laquo;</span>
+                    </li>
+                    <li class="page-item">
+                        <span class="page-link" style="color: grey">&larr;</span>
+                    </li>
+                    {% endif %}
+                    
+                    <!-- Page numbers -->
+                    <li class="page-item">
+                        <span class="page-link">{{ images.number }} / {{ images.paginator.num_pages }}</span>
+                    </li>
+                    
+                    <!-- Next page link -->
+                    {% if images.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?{% param_replace page=images.next_page_number %}">&rarr;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?{% param_replace page=images.paginator.num_pages %}">&raquo;</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <span class="page-link" style="color: grey">&rarr;</span>
+                    </li>
+                    <li class="page-item">
+                        <span class="page-link" style="color: grey">&raquo;</span>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

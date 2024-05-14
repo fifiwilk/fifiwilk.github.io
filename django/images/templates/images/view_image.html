@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Return to list link -->
+        <a href="/images" class="btn btn-primary mt-3">Return to List</a>
+
+        <!-- Details -->
+        <h1>{{ image.image_title }}</h1>
+        <h5><b>Published Date:</b> {{ image.pub_date }}</h5>
+        <h5><b>Image Size:</b> {{ image.width }}x{{ image.height }}</h5>
+        {% if image.description != '' %}
+            <h5><b>Description</b></h5>
+            <p>{{ image.description }}</p>
+        {% endif %}
+        
+        <!-- SVG -->
+        <svg width="{{image.width}}" height="{{image.height}}" viewBox="0 0 {{image.width}} {{image.height}}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            {% for r in rectangles %}
+                <rect x="{{r.x_pos}}" y="{{r.y_pos}}" width="{{r.width}}" height="{{r.height}}" fill="{{r.fill_color}}"></rect>
+            {% endfor %}
+        </svg>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
